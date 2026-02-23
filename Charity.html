@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zubairi muslim charity foundation 🇺🇬 | Supporting Communities Through Food, Shelter & Water</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #2E7D32;
+            --deep-green: #1B5E20;
+            --warm-orange: #E65100;
+            --sunset-gold: #FFB300;
+            --earth-brown: #5D4037;
+            --cream: #FFF8E1;
+            --white: #FFFFFF;
+            --dark-text: #212121;
+            --dfcublue: #003366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.5rem 5%;
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+
+        .logo span {
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--warm-orange);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .donate-btn {
+            background: var(--warm-orange);
+            color: white !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            transition: transform 0.3s, box-shadow 0.3s !important;
+        }
+
+        .donate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230, 81, 0, 0.3);
+        }
+
+        .donate-btn::after {
+            display: none !important;
+        }
+
+        /* Hero Section with Video Background */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.85), rgba(27, 94, 32, 0.9));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .hero-video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.7), rgba(27, 94, 32, 0.8));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--warm-orange);
+            color: white;
+            box-shadow: 0 4px 15px rgba(230, 81, 0, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(230, 81, 0, 0.6);
+            background: #F57C00;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-green);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--cream);
+            padding: 4rem 5%;
+            position: relative;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transform: translateY(0);
+            transition: transform 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--earth-brown);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        /* Mission Section */
+        .mission {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--deep-green);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '🇺🇬';
+            position: absolute;
+            right: -50px;
+            top: 0;
+            font-size: 2rem;
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .mission-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .mission-card {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            background: linear-gradient(145deg, #ffffff, #f5f5f5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--sunset-gold);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .mission-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .mission-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: white;
+            transition: transform 0.3s;
+        }
+
+        .mission-card:hover .mission-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .mission-card h3 {
+            color: var(--deep-green);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Gallery Section with Real Image */
+        .gallery {
+            padding: 6rem 5%;
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .gallery-container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .gallery-container:hover .gallery-image {
+            transform: scale(1.02);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 2rem;
+            text-align: left;
+        }
+
+        .gallery-caption h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Impact Section */
+        .impact {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--deep-green), var(--primary-green));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+            opacity: 0.3;
+        }
+
+        .impact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .impact-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .impact-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .impact-list {
+            list-style: none;
+        }
+
+        .impact-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .impact-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--sunset-gold);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .impact-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: rotate(2deg);
+            transition: transform 0.3s;
+        }
+
+        .impact-image:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .impact-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Programs Section */
+        .programs {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .programs-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .program-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-green), var(--deep-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-image::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.5s;
+        }
+
+        .program-card:hover .program-image::after {
+            transform: scale(1);
+        }
+
+        .program-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-content h3 {
+            color: var(--deep-green);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .program-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .program-btn {
+            align-self: flex-start;
+            color: var(--warm-orange);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .program-btn:hover {
+            gap: 1rem;
+        }
+
+        /* Payment Section - DFCU Bank */
+        .payment-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+            position: relative;
+        }
+
+        .payment-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .payment-info {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--dfcublue);
+        }
+
+        .payment-info h3 {
+            color: var(--dfcublue);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .bank-details {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border: 2px dashed var(--dfcublue);
+        }
+
+        .bank-detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 1.1rem;
+        }
+
+        .bank-detail-item:last-child {
+            border-bottom: none;
+        }
+
+        .bank-detail-label {
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+
+        .bank-detail-value {
+            color: var(--dfcublue);
+            font-weight: 700;
+            font-family: monospace;
+            font-size: 1.2rem;
+        }
+
+        .copy-btn {
+            background: var(--dfcublue);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+            transition: all 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: #002244;
+            transform: translateY(-2px);
+        }
+
+        .copy-btn.copied {
+            background: var(--primary-green);
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .payment-method-card {
+            flex: 1;
+            min-width: 150px;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .payment-method-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .payment-method-card.active {
+            border: 3px solid var(--warm-orange);
+            background: var(--cream);
+        }
+
+        .payment-method-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .payment-form h3 {
+            color: var(--deep-green);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        .amount-presets {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .amount-preset {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e0e0e0;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .amount-preset:hover,
+        .amount-preset.active {
+            background: var(--warm-orange);
+            color: white;
+            border-color: var(--warm-orange);
+        }
+
+        .qr-code {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .qr-placeholder {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--cream), #fff);
+            border: 2px dashed var(--dfcublue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 4rem;
+            color: var(--dfcublue);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 5%;
+            background: white;
+            position: relative;
+        }
+
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+
+        .testimonial {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .testimonial.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .testimonial-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #444;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 4rem;
+            color: var(--sunset-gold);
+            position: absolute;
+            opacity: 0.3;
+        }
+
+        .testimonial-text::before {
+            top: -20px;
+            left: -20px;
+        }
+
+        .testimonial-text::after {
+            bottom: -40px;
+            right: -20px;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--deep-green);
+            font-size: 1.1rem;
+        }
+
+        .testimonial-role {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: var(--primary-green);
+            transform: scale(1.2);
+        }
+
+        /* Contact/Footer */
+        footer {
+            background: var(--earth-brown);
+            color: white;
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--sunset-gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 2;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--sunset-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--warm-orange);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #999;
+        }
+
+        .uganda-flag {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--deep-green);
+        }
+
+        /* Alert/Notification */
+        .alert {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: var(--primary-green);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 9999;
+            transform: translateX(400px);
+            transition: transform 0.3s;
+        }
+
+        .alert.show {
+            transform: translateX(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .impact-container,
+            .payment-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2::after {
+                display: none;
+            }
+
+            .payment-info {
+                order: 2;
+            }
+
+            .payment-form {
+                order: 1;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Video Gallery */
+        .video-gallery {
+            padding: 4rem 5%;
+            background: white;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span>🇺🇬</span>
+               zubairi muslim charity foundation
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#mission">Our Mission</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#donate" class="donate-btn">Donate Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Background Video -->
+    <section class="hero" id="home">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline>
+                <source src="/mnt/kimi/upload/FamilyamtakingcareofthesechildrenorphansinUgandaAf_1771594036986.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Bringing Hope to Communities Across Uganda</h1>
+            <p>Providing food, shelter, and clean water to the elderly, orphans, and vulnerable communities. Together, we can build a brighter future for all.</p>
+            <div class="hero-buttons">
+                <a href="#donate" class="btn btn-primary">Make a Donation</a>
+                <a href="#programs" class="btn btn-secondary">Our Programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item fade-in">
+                <span class="stat-number" data-target="15000">0</span>
+                <span class="stat-label">Meals Served</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number" data-target="500">0</span>
+                <span class="stat-label">Homes Built</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number" data-target="25">0</span>
+                <span class="stat-label">Water Wells</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number" data-target="2000">0</span>
+                <span class="stat-label">Lives Impacted</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission" id="mission">
+        <div class="section-header fade-in">
+            <h2>Our Mission</h2>
+            <p>We are dedicated to uplifting the most vulnerable members of Ugandan society through sustainable, community-driven initiatives that provide immediate relief and long-term hope.</p>
+        </div>
+        <div class="mission-grid">
+            <div class="mission-card fade-in">
+                <div class="mission-icon">🍲</div>
+                <h3>Food Security</h3>
+                <p>Ensuring no one goes hungry by providing nutritious meals to orphanages, elderly care homes, and impoverished communities across rural Uganda.</p>
+            </div>
+            <div class="mission-card fade-in">
+                <div class="mission-icon">🏠</div>
+                <h3>Safe Shelter</h3>
+                <p>Building and renovating homes for the elderly and orphans, creating safe, dignified living spaces where vulnerable populations can thrive.</p>
+            </div>
+            <div class="mission-card fade-in">
+                <div class="mission-icon">💧</div>
+                <h3>Clean Water</h3>
+                <p>Installing boreholes and water purification systems in villages lacking access to clean water, reducing waterborne diseases and improving health.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section with Real Image -->
+    <section class="gallery" id="gallery">
+        <div class="section-header fade-in">
+            <h2>Our Impact in Action</h2>
+            <p>Real stories of hope and transformation from the communities we serve.</p>
+        </div>
+        <div class="gallery-container fade-in">
+            <img src="/mnt/kimi/upload/IMG-20260217-WA0007.jpg" alt="Charity For All Uganda - Feeding orphans and the needy" class="gallery-image">
+            <div class="gallery-caption">
+                <h3>Feeding the Future</h3>
+                <p>Our community feeding program brings nutritious meals to orphans and vulnerable children across Uganda.</p>
+            </div>
+        </div>
+        
+        <div class="video-gallery fade-in">
+            <h3 style="margin-bottom: 2rem; color: var(--deep-green);">Watch Our Work in Action</h3>
+            <div class="video-container">
+                <video controls poster="/mnt/kimi/upload/IMG-20260217-WA0007.jpg">
+                    <source src="/mnt/kimi/upload/FamilyamtakingcareofthesechildrenorphansinUgandaAf_1771594036986.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact" id="impact">
+        <div class="impact-container">
+            <div class="impact-content fade-in">
+                <h2>Transforming Lives Since 2015</h2>
+                <p>For nearly a decade, Charity For All Uganda has been at the forefront of community development, working hand-in-hand with local leaders to create sustainable change. Our holistic approach addresses immediate needs while building infrastructure for future generations.</p>
+                <ul class="impact-list">
+                    <li>Partnered with 50+ local communities</li>
+                    <li>Trained 200+ local volunteers</li>
+                    <li>Established 10 community centers</li>
+                    <li>Provided medical care to 5,000+ individuals</li>
+                    <li>Supported education for 800+ children</li>
+                </ul>
+                <a href="#donate" class="btn btn-primary" style="margin-top: 2rem;">Join Our Cause</a>
+            </div>
+            <div class="impact-image fade-in">
+                <img src="/mnt/kimi/upload/IMG-20260217-WA0007.jpg" alt="Community support">
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs" id="programs">
+        <div class="section-header fade-in">
+            <h2>Our Programs</h2>
+            <p>Targeted initiatives designed to address specific community needs with measurable, lasting impact.</p>
+        </div>
+        <div class="programs-grid">
+            <div class="program-card fade-in">
+                <div class="program-image">👴</div>
+                <div class="program-content">
+                    <h3>Elderly Care Support</h3>
+                    <p>Providing food, medical assistance, and companionship to elderly individuals who have been abandoned or lack family support. We ensure their golden years are lived with dignity.</p>
+                    <a href="#" class="program-btn">Learn More →</a>
+                </div>
+            </div>
+            <div class="program-card fade-in">
+                <div class="program-image">👶</div>
+                <div class="program-content">
+                    <h3>Orphan Care Initiative</h3>
+                    <p>Supporting orphanages and foster care programs with essential supplies, educational materials, and psychological support to help children heal and grow.</p>
+                    <a href="#" class="program-btn">Learn More →</a>
+                </div>
+            </div>
+            <div class="program-card fade-in">
+                <div class="program-image">🌱</div>
+                <div class="program-content">
+                    <h3>Community Development</h3>
+                    <p>Empowering villages through agricultural training, microfinance programs, and infrastructure projects that create self-sustaining communities.</p>
+                    <a href="#" class="program-btn">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section - DFCU Bank -->
+    <section class="payment-section" id="donate">
+        <div class="section-header fade-in">
+            <h2>Make a Difference Today</h2>
+            <p>Your contribution directly impacts lives. Choose your preferred payment method:</p>
+        </div>
+        
+        <div class="payment-container">
+            <div class="payment-info fade-in">
+                <h3>
+                    <span>🏦</span>
+                    Bank Transfer Details
+                </h3>
+                <p style="margin-bottom: 1.5rem; color: #666;">Make a direct bank transfer to our DFCU Bank account. All donations are secure and tax-deductible.</p>
+                
+                <div class="bank-details">
+                    <div class="bank-detail-item">
+                        <span class="bank-detail-label">Bank Name:</span>
+                        <span class="bank-detail-value">DFCU Bank</span>
+                    </div>
+                    <div class="bank-detail-item">
+                        <span class="bank-detail-label">Account Number:</span>
+                        <span class="bank-detail-value">
+                            01110017751513
+                            <button class="copy-btn" onclick="copyToClipboard('01110017751513', this)">Copy</button>
+                        </span>
+                    </div>
+                    <div class="bank-detail-item">
+                        <span class="bank-detail-label">Account Name:</span>
+                        <span class="bank-detail-value">zubairi madoyi</span>
+                    </div>
+                    <div class="bank-detail-item">
+                        <span class="bank-detail-label">Currency:</span>
+                        <span class="bank-detail-value">UGX / USD</span>
+                    </div>
+                </div>
+
+                <div class="payment-methods">
+                    <div class="payment-method-card active" onclick="selectPayment(this, 'bank')">
+                        <div class="payment-method-icon">🏦</div>
+                        <div style="font-weight: 600;">Bank Transfer</div>
+                        <div style="font-size: 0.9rem; color: #666;">DFCU Bank</div>
+                    </div>
+                    <div class="payment-method-card" onclick="selectPayment(this, 'mobile')">
+                        <div class="payment-method-icon">📱</div>
+                        <div style="font-weight: 600;">Mobile Money</div>
+                        <div style="font-size: 0.9rem; color: #666;">MTN:+25679216975 Airtel:+256759634848</div>
+                    </div>
+                    <div class="payment-method-card" onclick="selectPayment(this, 'cash')">
+                        <div class="payment-method-icon">💵</div>
+                        <div style="font-weight: 600;">Cash</div>
+                        <div style="font-size: 0.9rem; color: #666;">In Person</div>
+                    </div>
+                </div>
+
+                <div class="qr-code">
+                    <p style="margin-bottom: 1rem; font-weight: 600; color: var(--dark-text);">Scan to Donate</p>
+                    <div class="qr-placeholder">📱</div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">Use your banking app to scan</p>
+                </div>
+            </div>
+
+            <div class="payment-form fade-in">
+                <h3>Donation Form</h3>
+                <form onsubmit="handleDonation(event)">
+                    <div class="form-group">
+                        <label>Select Amount (UGX)</label>
+                        <div class="amount-presets">
+                            <button type="button" class="amount-preset" onclick="setAmount(50000)">50K</button>
+                            <button type="button" class="amount-preset" onclick="setAmount(100000)">100K</button>
+                            <button type="button" class="amount-preset active" onclick="setAmount(200000)">200K</button>
+                            <button type="button" class="amount-preset" onclick="setAmount(500000)">500K</button>
+                            <button type="button" class="amount-preset" onclick="setAmount(1000000)">1M</button>
+                        </div>
+                        <input type="number" id="donationAmount" placeholder="Or enter custom amount" value="200000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="+256 706733791">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Donation Purpose</label>
+                        <select>
+                            <option>General Support</option>
+                            <option>Food Program</option>
+                            <option>Shelter Construction</option>
+                            <option>Clean Water Project</option>
+                            <option>Elderly Care</option>
+                            <option>Orphan Support</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Message (Optional)</label>
+                        <textarea rows="3" placeholder="Leave a message of encouragement..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                        Proceed to Donate
+                    </button>
+                </form>
+
+                <div style="margin-top: 2rem; padding: 1.5rem; background: var(--cream); border-radius: 10px; border-left: 4px solid var(--warm-orange);">
+                    <p style="font-weight: 600; color: var(--deep-green); margin-bottom: 0.5rem;">💡 Prefer to donate directly?</p>
+                    <p style="font-size: 0.95rem; color: #666;">Simply transfer to our DFCU Bank account: <strong style="color: var(--dfcublue);">01110017751513</strong> and email us your receipt at <a href="mailto:donations@zubairicharityuganda.org" style="color: var(--warm-orange);">donations@zubairicharityuganda.org</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-header fade-in">
+            <h2>Stories of Hope</h2>
+            <p>Hear from those whose lives have been transformed by your generosity.</p>
+        </div>
+        <div class="testimonials-container">
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <p class="testimonial-text">Thanks to zubairi Charity  Uganda, my grandchildren and I have a safe roof over our heads. The support we received changed our lives completely.</p>
+                    <div class="testimonial-author">Margaret Auma</div>
+                    <div class="testimonial-role">Community Elder, Gulu District</div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">The clean water well in our village means our children no longer get sick from waterborne diseases. We are forever grateful.</p>
+                    <div class="testimonial-author">John Okello</div>
+                    <div class="testimonial-role">Village Chief, Lira Region</div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">I was orphaned at a young age, but this charity ensured I never missed a meal and could continue my education. Today, I'm training to be a nurse.</p>
+                    <div class="testimonial-author">Sarah Namukwaya</div>
+                    <div class="testimonial-role">University Student, Kampala</div>
+                </div>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>zubairi muslim Charity foundation  <span class="uganda-flag">🇺🇬</span></h3>
+                <p>Registered Non-Profit Organization<br>
+                Plot 45, Kampala Road<br>
+                Kampala, Uganda</p>
+                <div class="social-links">
+                    <a href="#">f</a>
+                    <a href="#">t</a>
+                    <a href="#">in</a>
+                    <a href="#">ig</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#home">Home</a><br>
+                <a href="#mission">About Us</a><br>
+                <a href="#programs">Programs</a><br>
+                <a href="#donate">Donate</a><br>
+                <a href="#">Volunteer</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@zubairimualimcharityfoundation.org<br>
+                Phone:whatsap +256 706733791<br>
+                Emergency: +256 759634848<br>
+                Mon-Fri: 8:00 AM - 6:00 PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Bank Details</h3>
+                <p style="font-family: monospace; background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 5px;">
+                    DFCU Bank<br>
+                    Acc: 01110017751513<br>
+                    Name: zubairi madoyi
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 zubairi muslim Charity foundation. All rights reserved. | Registered Charity No. UG123456</p>
+        </div>
+    </footer>
+
+    <!-- Alert Notification -->
+    <div id="alert" class="alert">
+        <span id="alertMessage">Copied to clipboard!</span>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Fade in animation on scroll
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(animateCounters, 20);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            });
+        };
+
+        // Trigger counters when stats section is visible
+        let counted = false;
+        const statsSection = document.querySelector('.stats');
+        
+        window.addEventListener('scroll', () => {
+            if (!counted && statsSection.getBoundingClientRect().top < window.innerHeight) {
+                animateCounters();
+                counted = true;
+            }
+        });
+
+        // Testimonial Slider
+        let currentIndex = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.dot');
+
+        function currentSlide(index) {
+            showSlide(index);
+        }
+
+        function showSlide(index) {
+            testimonials.forEach(t => t.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentIndex = index;
+        }
+
+        // Auto-advance testimonials
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            showSlide(currentIndex);
+        }, 5000);
+
+        // Copy to Clipboard
+        function copyToClipboard(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                showAlert('Account number copied to clipboard!');
+                
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        // Show Alert
+        function showAlert(message) {
+            const alert = document.getElementById('alert');
+            document.getElementById('alertMessage').textContent = message;
+            alert.classList.add('show');
+            setTimeout(() => {
+                alert.classList.remove('show');
+            }, 3000);
+        }
+
+        // Payment Method Selection
+        function selectPayment(card, method) {
+            document.querySelectorAll('.payment-method-card').forEach(c => {
+                c.classList.remove('active');
+            });
+            card.classList.add('active');
+            
+            // Here you would typically update the form or show different fields
+            console.log('Selected payment method:', method);
+        }
+
+        // Amount Selection
+        function setAmount(amount) {
+            document.getElementById('donationAmount').value = amount;
+            document.querySelectorAll('.amount-preset').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        // Handle Donation Form
+        function handleDonation(e) {
+            e.preventDefault();
+            const amount = document.getElementById('donationAmount').value;
+            showAlert(`Thank you! Please transfer UGX ${Number(amount).toLocaleString()} to DFCU Bank account 01110017751513`);
+            
+            // Scroll to bank details
+            document.querySelector('.bank-details').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+
+        // Initial fade-in check
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>
+
